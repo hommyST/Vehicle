@@ -92,7 +92,7 @@ class Vehicle {
     force.limit(this.maxforce)
 
     if (this.debug) {
-      ctx.strokeStyle = '#fafafa'
+      ctx.strokeStyle = d < r ? '#009688' : '#fafafa'
       ctx.lineWidth = 1
       ctx.beginPath()
       ctx.setLineDash([15])
