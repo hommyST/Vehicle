@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <script src="math.js"></script>
+  <script src="Vector.js"></script>
+  <script src="Vehicle.js"></script>
+  <script src="main.js" defer></script>
+  <title>vectors</title>
+</head>
+<body>
+  <canvas></canvas>
+
+  <div class="controls">
+    <div class="head">
+      <span>Controls</span>
+      <button id="closeControl">_</button>
+    </div>
+    <div class="control" id="maxspeed">
+      <input type="range" min="1" max="20" value="4" step="1">
+      <label>maxspeed</label>
+      <output></output>
+    </div>
+    <div class="control" id="maxforce">
+      <input type="range" min="0.01" max="2" value="0.4" step="0.01">
+      <label>maxforce</label>
+      <output></output>
+    </div>
+  </div>
+
+  <style>
+    * {
+      margin: 0;
+      accent-color: #4caf50;
+    }
+    *::selection {
+      background-color: #212121;
+    }
+    html {
+      color-scheme: dark;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      border-radius: 0 10px 0px 0;
+      background-color: #0d47a1aa;
+      padding: 16px;
+      padding-top: 5px;
+      translate: 0 0;
+      transition: translate 300ms;
+
+      &.closed {
+        translate: 0 calc(100% - 32px);
+      }
+    }
+    .head {
+      display: flex;
+      align-items: end;
+      margin-bottom: 12px;
+    }
+    #closeControl {
+      font-weight: 700;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: auto;
+      /* translate: 0 -5px; */
+      /* rotate: 180deg; */
+    }
+    .control {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      output {
+        background: #4caf50;
+        border-radius: 3px;
+        padding: 2px 4px;
+
+        &:hover {
+          background: #66bb6a;
+        }
+      }
+    }
+
+    input[type="range"] {
+      width: 250px;
+      cursor: w-resize;
+    }
+  </style>
+</body>
+</html>
